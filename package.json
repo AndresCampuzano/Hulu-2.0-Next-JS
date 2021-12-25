@@ -5,15 +5,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint . --fix --ext .js,.jsx",
+    "prettier": "prettier . --write"
   },
+  "author": "Andres Campuzano",
+  "license": "MIT",
   "dependencies": {
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "eslint": "8.5.0",
-    "eslint-config-next": "12.0.7"
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.5.0",
+    "eslint-config-next": "12.0.7",
+    "eslint-plugin-react": "^7.28.0",
+    "postcss": "^8.2.15",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.7"
   }
 }
