@@ -1,10 +1,31 @@
 import Image from "next/image";
+import { HeaderItem } from "./HeaderItem";
+import {
+  BadgeCheckIcon,
+  CollectionIcon,
+  HomeIcon,
+  LightningBoltIcon,
+  SearchIcon,
+  UserIcon,
+} from "@heroicons/react/outline";
 
-export default function Header() {
+export const Header = () => {
   return (
-    <header className="">
-      <h1>this is the header</h1>
-      <Image src="https://links.papareact.com/ua6" width={200} height={100} />
+    <header className="flex flex-col sm:flex-row m-5 justify-between items-center h-auto">
+      <div className="flex flex-grow justify-evenly max-w-2xl ">
+        <HeaderItem title="HOME" icon={HomeIcon} />
+        <HeaderItem title="TRENDING" icon={LightningBoltIcon} />
+        <HeaderItem title="VERIFIED" icon={BadgeCheckIcon} />
+        <HeaderItem title="COLLECTIONS" icon={CollectionIcon} />
+        <HeaderItem title="SEARCH" icon={SearchIcon} />
+        <HeaderItem title="ACCOUNT" icon={UserIcon} />
+      </div>
+      <Image
+        className="object-contain"
+        src="https://links.papareact.com/ua6"
+        width={200}
+        height={100}
+      />
     </header>
   );
-}
+};
