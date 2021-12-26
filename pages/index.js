@@ -19,19 +19,21 @@ export default function Home({ results }) {
   );
 }
 
+//Server side render
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
 
-  try {
-    const request = await fetch(
-      `https://api.themoviedb.org/3/${
-        requests[genre]?.url || requests.fetchTrending.url
-      }`
-    );
-    return {
-      props: request.json(),
-    };
-  } catch (e) {
-    console.error(e);
-  }
+  const request = await fetch(
+    `https://api.themoviedb.org/3${
+      requests[genre]?.url || requests.fetchTrending.url
+    }`
+  )
+    .then((res) => res.json())
+    .catch((e) => console.error(e));
+
+  return {
+    props: {
+      results: request.results,
+    },
+  };
 }
