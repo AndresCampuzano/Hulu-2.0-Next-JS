@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { HeaderItem } from "./HeaderItem";
-import { Nav } from "./Nav";
 import {
   BadgeCheckIcon,
   CollectionIcon,
@@ -29,7 +28,6 @@ export const Header = () => {
           height={100}
         />
       </header>
-      <Nav />
     </>
   );
 };
